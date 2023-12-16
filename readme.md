@@ -73,7 +73,7 @@ The posture analysis model uses pose estimation points to assess and classify hu
 #### Displacement Calculation
 
 To calculate displacement using the displacement module:\
-python displacement.py
+`python displacement.py`
 
 #### Main Integration
 The `main.py` script orchestrates the process of classifying a video as either a 'delivery' or 'non-delivery' event and subsequently detecting logos within the video frames. It operates in the following steps:
