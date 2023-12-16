@@ -28,6 +28,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 #### Logo Detection Model
 The logo detection model employs the InceptionV3 architecture, leveraging transfer learning to accurately identify and classify company logos. This model has been trained on a diverse dataset and is robust to variations in the logo appearance, including distortions and different scales.
+![Logo Detection Input](Results/Training batch sample.png)
 - To train the logo detection model: (the model is already trained and saved) \
 `python logo_detection/logo_detection.py`
 
@@ -77,16 +78,16 @@ Note: Please ensure that the required models and data preprocessing scripts are 
 ### Model Performance
 * The logo detection performance is illustrated in the below graph, which showcases the model's precision in classifying different company logos.
 #### Logo Detection Accuracy and Loss while training
-![Logo Detection Results](results/LogoDetection_final.png)
+![Logo Detection Results](Results/LogoDetection_final.png)
 * The model's accuracy and loss over epochs are displayed in below graph, revealing how the model's performance has evolved throughout the training process. Additionally, the image depicts of the ROC curve, with the Area Under the Curve (AUC) metric indicating the model's classification efficacy.
 #### Learning Curve
-![Learning Curve](Results/Posture Model/LC_final.png )
+![Learning Curve](Results/Posture_Model/LC_final.png)
 #### ROC - AUC
-![Roc_Auc](Results/Posture Model/ROC_AUCpng.png)
+![Roc_Auc](Results/Posture_Model/ROC_AUC.png)
 #### Training Data Displacement Distribution
-![Training_data_distribution](Results/Posture Model/displacement_distributionpng.png)
+![Training_data_distribution](Results/Posture_Model/displacement_distribution.png)
 #### Feature scaling and Importance
-![Feature Importance](Results/Posture Model/featureCorrelation.png)
+![Feature Importance](Results/Posture_Model/featureCorrelation.png)
 The above images provide insight into the features' relationships and their importance in the model's decision-making process. These visualizations are critical for understanding the underlying factors that the posture model considers when making a prediction.
 ## Built With
 
@@ -105,7 +106,7 @@ With a keen eye for innovative solutions, I have orchestrated the seamless fusio
 
 Connect :
 - [GitHub](https://github.com/adi-tsvet)
-- [LinkedIn](https://www.linkedin.com/in/adi_tsvet/) 
+- [LinkedIn](https://www.linkedin.com/in/adi-tsvet/) 
 ## References
 
 * Durupinar, F. (2021). Perception of Human Motion Similarity Based on Laban Movement Analysis. ACM Symposium on Applied Perception 2021, 1–7. https://doi.org/10.1145/3474451.3476241
