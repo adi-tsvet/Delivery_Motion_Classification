@@ -18,22 +18,51 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Installing
 - First, clone the repository or download the zip file and extract it.
-`git clone https://yourrepository.git`
+`git clone https://github.com/adi-tsvet/Delivery_Motion_Classification.git`
 - Navigate to the project directory:\
-`cd <your-project-directory>`
+You need to be in Delivery_Motion_Classification directory if not - \
+`cd Delivery_Motion_Classification`
 - Install the required dependencies:\
 `pip install -r requirements.txt`
 
-### Running the Models
+## Data Preprocessing
+
+#### Delivery Classification
+
+The process for extracting X and Y displacement coordinates of body parts from video frames includes several steps, each handled by different scripts:
+
+1. `getData.py`: Loads video data and reads frames to prepare for pose detection.
+2. `detect_pose.py`: Utilizes a pre-trained pose detection model to identify body parts in video frames.
+3. `save_pose_to_dataframe.py`: Saves detected pose coordinates to a structured pandas DataFrame and outputs to a CSV file.
+4. `pose_constants.py`: Contains constants for pose detection, including the list of body parts and indices used in detection and data processing.
+5. **Reading CSV**: Processes the CSV file with body part coordinates, extracted from video data.
+6. **Calculating Displacement**: Computes the displacement of each body part between frames using the midpoint between the left and right hips as a reference.
+7. **DataFrame Output**: Organizes the displacements into a pandas DataFrame, with rows representing frames and columns corresponding to body part displacements.
+
+#### Logo Detection
+
+The logo detection pipeline includes image preprocessing, augmentation, and normalization:
+
+1. **Image Resizing and Cropping**: Standardizes image dimensions for model input and crops based on annotations to focus on the logo.
+2. **Data Augmentation**: Utilizes `ImageDataGenerator` to apply flips and other transformations, enriching the dataset and helping the model generalize better.
+3. **Custom Data Generator**: Implements a `LogoDataGenerator` to supply the model with batches of processed images.
+4. **Normalization**: Scales pixel values to a [0, 1] range for consistent model input.
+
+The `BODY_COLUMNS` constant from `pose_constants.py` is an array defining the body parts for which displacements are calculated:
+
+```python
+BODY_COLUMNS = ["NoseX", "NoseY", "NeckX", "NeckY", ... , "BackgroundX", "BackgroundY"]
+```
+
+## Running the Models
 
 #### Logo Detection Model
 The logo detection model employs the InceptionV3 architecture, leveraging transfer learning to accurately identify and classify company logos. This model has been trained on a diverse dataset and is robust to variations in the logo appearance, including distortions and different scales.
-![Logo Detection Input](Results/Training_batch_sample.png)
 - To train the logo detection model: (the model is already trained and saved) \
 `python logo_detection/logo_detection.py`
 
 - To test the logo detection model: \
-- `python logo_detection/test_model.py`
+`python logo_detection/test_model.py`
 
 #### Posture Detection Model
 The posture analysis model uses pose estimation points to assess and classify human postures. This model is trained to distinguish between delivery and non-delivery postures, which can be applied to ergonomic studies or activity recognition.
