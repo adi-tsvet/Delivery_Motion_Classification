@@ -17,7 +17,7 @@ These instructions will get you a copy of the project up and running on your loc
 - pip
 
 ### Installing
-- First, clone the repository or download the zip file and extract it.
+- First, clone the repository or download the zip file and extract it. \
 `git clone https://github.com/adi-tsvet/Delivery_Motion_Classification.git`
 - Navigate to the project directory:\
 You need to be in Delivery_Motion_Classification directory if not - \
