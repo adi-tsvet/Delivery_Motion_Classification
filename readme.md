@@ -28,7 +28,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 #### Logo Detection Model
 The logo detection model employs the InceptionV3 architecture, leveraging transfer learning to accurately identify and classify company logos. This model has been trained on a diverse dataset and is robust to variations in the logo appearance, including distortions and different scales.
-![Logo Detection Input](Results/Training batch sample.png)
+![Logo Detection Input](Results/Training_batch_sample.png)
 - To train the logo detection model: (the model is already trained and saved) \
 `python logo_detection/logo_detection.py`
 
